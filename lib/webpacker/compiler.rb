@@ -56,6 +56,7 @@ class Webpacker::Compiler
       sterr, stdout, status = Open3.capture3(webpack_env, "bundle exec webpack")
 
       if status.success?
+        logger.info stdout if config.verbose?
         logger.info "Compiled all packs in #{config.public_output_path}"
       else
         logger.error "Compilation failed:\n#{sterr}\n#{stdout}"

@@ -17,6 +17,10 @@ class Webpacker::Configuration
     fetch(:compile)
   end
 
+  def verbose?
+    !!fetch(:verbose)
+  end
+
   def source_path
     root_path.join(fetch(:source_path))
   end
